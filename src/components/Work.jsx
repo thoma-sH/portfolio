@@ -18,7 +18,7 @@ function ProjectRow({ project, onProjectEnter, onProjectLeave }) {
       target="_blank"
       rel="noreferrer"
       className="grid md:grid-cols-12 gap-3 md:gap-6 project-row scroll-reveal no-underline text-inherit"
-      onMouseEnter={() => onProjectEnter(project.previewSrc)}
+      onMouseEnter={() => onProjectEnter({ src: project.previewSrc, aspect: project.previewAspect })}
       onMouseLeave={onProjectLeave}
     >
       <div className="md:col-span-2 font-mono text-[10px] md:text-xs opacity-50 num">→ {project.num}</div>

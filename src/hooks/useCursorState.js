@@ -8,10 +8,10 @@ export function useCursorState() {
   const onLinkEnter = () => setActive(true);
   const onLinkLeave = () => setActive(false);
 
-  const onProjectEnter = (previewSrc) => {
+  const onProjectEnter = (previewData) => {
     setActive(true);
     setLabel('VIEW REPO');
-    if (previewSrc) setPreview(previewSrc);
+    if (previewData) setPreview(previewData);
   };
   const onProjectLeave = () => {
     setActive(false);

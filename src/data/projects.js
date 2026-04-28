@@ -4,7 +4,8 @@ export const projects = [
     title: 'Lacuna',
     description: "A social media app I'm currently building. Still rough around the edges, still figuring it out.",
     repoPath: 'thoma-sH/Lacuna',
-    previewSrc: '/projects/lacuna.png',
+    previewSrc: '/lacuna/lacuna.gif',
+    previewAspect: 'phone',
     meta: { label: 'SOCIAL', status: 'IN PROGRESS' },
   },
   {
@@ -12,7 +13,8 @@ export const projects = [
     title: 'Concert Companion',
     description: "A 24-hour build from Hog Hacks 2026 — a companion app for live shows. We've kept iterating on it since.",
     repoPath: 'thoma-sH/concert-companion',
-    previewSrc: '/projects/concert.png',
+    previewSrc: '/concert_companion/cc.gif',
+    previewAspect: 'desktop',
     meta: { label: "HOG HACKS '26" },
   },
   {
@@ -20,7 +22,8 @@ export const projects = [
     title: 'Java Mini-Game',
     description: 'A Link-inspired adventure I built in Java for my Programming Paradigms class.',
     repoPath: 'thoma-sH/javaminigame-Link_from_Paradigms',
-    previewSrc: '/projects/javagame.gif',
+    previewSrc: '/link/link.gif',
+    previewAspect: 'desktop',
     meta: { label: 'COURSEWORK · JAVA ↗' },
   },
   {
@@ -28,7 +31,8 @@ export const projects = [
     title: 'Photon',
     description: 'A Python team project from my Software Engineering course — my first time contributing to a longer-running group codebase with Team 20.',
     repoPath: 'thoma-sH/photon-main',
-    previewSrc: '/projects/photon.gif',
+    previewSrc: '/photon/image12.gif',
+    previewAspect: 'desktop',
     meta: { label: 'TEAM 20 · PYTHON ↗' },
   },
 ];
