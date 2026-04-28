@@ -29,7 +29,7 @@ export const projects = [
   {
     num: '04',
     title: 'Photon',
-    description: 'A Python team project from my Software Engineering course — my first time contributing to a longer-running group codebase with Team 20.',
+    description: 'Modernized Laser Tag software for the Original Photon Laser Tag. This was a collaborative endeavor with three other peers. I developed the GUI and oversaw pull requests and the final product.',
     repoPath: 'thoma-sH/photon-main',
     previewSrc: '/photon/image12.gif',
     previewAspect: 'desktop',
