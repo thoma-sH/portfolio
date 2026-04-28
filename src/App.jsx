@@ -29,14 +29,26 @@ export default function App() {
   const heroRef = useRef(null);
 
   const { cursorPos, heroTilt, velocity } = useMouseTracking(heroRef);
-  const { time, greeting } = useFayettevilleTime();
+  const { time, greeting, phase } = useFayettevilleTime();
   const scrollProgress = useScrollProgress();
   const activeSection = useActiveSection();
   const curtainOpen = useCurtain(800);
-  const [hamiltonText, scrambleHamilton] = useScrambleText('Hamilton.');
+  const [hamiltonText, scramble] = useScrambleText('Hamilton.');
   const { copy: copyEmail, toast } = useCopyEmail('t.hamilton0416@gmail.com');
   const cursor = useCursorState();
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  const [phaseOverride, setPhaseOverride] = useState(null);
+
+  const PHASES = ['morning', 'afternoon', 'evening', 'late'];
+  const displayPhase = phaseOverride ?? phase;
+
+  const cycleTheme = () => {
+    const current = phaseOverride ?? phase;
+    const idx = PHASES.indexOf(current);
+    const next = PHASES[(idx + 1) % PHASES.length];
+    setPhaseOverride(next === phase ? null : next);
+    return next;
+  };
 
   // Preload preview gifs so hover is instant
   useEffect(() => {
@@ -72,16 +84,16 @@ export default function App() {
         onLinkEnter={cursor.onLinkEnter}
         onLinkLeave={cursor.onLinkLeave}
       />
+      <Cursor
+        pos={cursorPos}
+        active={cursor.active}
+        label={cursor.label}
+        preview={cursor.preview}
+        velocity={velocity}
+      />
 
-      <div className="min-h-screen bg-[#0E0D0B] text-[#F0EBDD] grain relative overflow-x-hidden">
+      <div className={`min-h-screen bg-[#0E0D0B] text-[#F0EBDD] grain relative overflow-x-hidden theme-${displayPhase}`}>
         <ScrollProgress progress={scrollProgress} />
-        <Cursor
-          pos={cursorPos}
-          active={cursor.active}
-          label={cursor.label}
-          preview={cursor.preview}
-          velocity={velocity}
-        />
         <AmbientGlow pos={cursorPos} />
         <SectionRail
           activeSection={activeSection}
@@ -92,14 +104,19 @@ export default function App() {
         <Nav
           greeting={greeting}
           time={time}
+          phase={displayPhase}
           onLinkEnter={cursor.onLinkEnter}
           onLinkLeave={cursor.onLinkLeave}
+          onTrigger={() => {
+            scramble();
+            return cycleTheme();
+          }}
         />
         <Hero
           ref={heroRef}
           tilt={heroTilt}
           hamiltonText={hamiltonText}
-          onScramble={scrambleHamilton}
+          onScramble={scramble}
           onLinkEnter={cursor.onLinkEnter}
           onLinkLeave={cursor.onLinkLeave}
         />

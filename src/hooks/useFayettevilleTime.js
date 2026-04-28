@@ -18,14 +18,16 @@ export function useFayettevilleTime() {
     return () => clearInterval(id);
   }, []);
 
-  const greeting = (() => {
+  const phase = (() => {
     const h = parseInt(time.split(':')[0]);
-    if (isNaN(h)) return 'HELLO';
-    if (h >= 5 && h < 12) return 'MORNING';
-    if (h >= 12 && h < 17) return 'AFTERNOON';
-    if (h >= 17 && h < 21) return 'EVENING';
-    return 'LATE';
+    if (isNaN(h)) return 'afternoon';
+    if (h >= 5 && h < 12) return 'morning';
+    if (h >= 12 && h < 17) return 'afternoon';
+    if (h >= 17 && h < 21) return 'evening';
+    return 'late';
   })();
 
-  return { time, greeting };
+  const greeting = isNaN(parseInt(time.split(':')[0])) ? 'HELLO' : phase.toUpperCase();
+
+  return { time, greeting, phase };
 }
