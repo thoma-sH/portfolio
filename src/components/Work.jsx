@@ -5,7 +5,7 @@ function ProjectMeta({ meta }) {
   if (meta.status) {
     return (
       <>
-        {meta.label} <span className="text-[#C4FF4D]">●</span> {meta.status}
+        {meta.label} <span className={`text-[#C4FF4D] ${meta.glowing ? 'glow-dot' : ''}`}>●</span> {meta.status}
       </>
     );
   }
@@ -89,7 +89,7 @@ export default function Work({ onProjectEnter, onProjectLeave }) {
         ))}
 
         <div className="grid md:grid-cols-12 gap-3 md:gap-6 opacity-50 scroll-reveal">
-          <div className="md:col-span-2 font-mono text-[10px] md:text-xs">→ 05</div>
+          <div className="md:col-span-2 font-mono text-[10px] md:text-xs">→ 06</div>
           <div className="md:col-span-7">
             <h3 className="font-display text-3xl md:text-6xl italic font-light mb-3 md:mb-5">More, soon.</h3>
             <p className="leading-relaxed text-base md:text-lg max-w-xl">
