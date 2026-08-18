@@ -28,7 +28,7 @@ const Hero = forwardRef(function Hero(
         </span>
       </h1>
       <p className="mt-10 md:mt-14 max-w-xl text-lg md:text-2xl leading-relaxed opacity-90 reveal d3">
-        I'm a Computer Science student at the University of Arkansas. I like building things; for class, for hackathons, or just to figure them out. A few are below.
+        I'm a Computer Science student at the University of Arkansas. Most of what I build starts with a vision I believe in and, unfortunately, just can't put down. A few are below.
       </p>
       <div className="mt-10 font-mono text-[10px] md:text-xs opacity-40 reveal d4">↓ scroll</div>
     </section>
