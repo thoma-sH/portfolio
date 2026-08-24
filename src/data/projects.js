@@ -54,6 +54,6 @@ export const sections = [
   { id: 'thanks', label: 'THANKS' },
 ];
 
-export const stack = ['Python', 'React', 'Durable Objects'];
+export const stack = ['TypeScript', 'Python', 'React', 'Durable Objects'];
 
 export const skills = ['Java', 'JavaScript', 'Python', 'C++', 'Dart', 'HTML / CSS', 'Git', 'Agile SDLC', 'CI/CD'];
